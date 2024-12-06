@@ -14,6 +14,10 @@ export const ImageContainer = styled.section`
   align-items: center;
   background-color: var(--secondary);
 
+  img {
+    width: 70%;
+  }
+
   @media(max-width: 768px) {
     display: none;
   }

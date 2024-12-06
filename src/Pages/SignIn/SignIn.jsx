@@ -13,8 +13,7 @@ function SignIn() {
 
   const [isForeigner, setIsForeigner] = useState(false);
   const [passport, setPassport] = useState('');
-  const [passportError, setPassportError] = useState(''); // Erro para passaporte
-
+  const [passportError, setPassportError] = useState('');
   const validateCpf = (inputCpf) => {
     if (inputCpf.length !== 11 || !inputCpf.match(/^\d+$/)) {
       setCpfError('CPF inválido');
