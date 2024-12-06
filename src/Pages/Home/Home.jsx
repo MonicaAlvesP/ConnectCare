@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../../Components/Header/Header.jsx";
 import doctors from "../../assets/doctorsHome.svg";
 import { Div, Box, Heading } from "./StyleHome.jsx";
