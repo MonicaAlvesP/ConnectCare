@@ -15,7 +15,7 @@ export const ImageContainer = styled.section`
   background-color: var(--secondary);
 
   img {
-    width: 70%;
+    width: 60%;
   }
 
   @media(max-width: 768px) {

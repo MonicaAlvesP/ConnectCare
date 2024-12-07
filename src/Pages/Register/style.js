@@ -16,7 +16,7 @@ export const ImageContainer = styled.section`
   background-color: var(--secondary);
 
   img {
-    width: 60%;
+    width: 45%;
   }
 
   @media(max-width: 768px) {
@@ -30,24 +30,24 @@ export const StepBox = styled.section`
   align-items: center;
   width: 40%;
   padding: 3rem;
-
+  
   @media(max-width: 768px) {
     width: 100%;
   }
-`
+  `
 
 export const StepsActive = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 3%;
- 
-`
+  
+  `
 export const ButtonsSteps = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-`
+  `
 
 export const ButtonBack = styled.button`
   padding: 10px 30px;

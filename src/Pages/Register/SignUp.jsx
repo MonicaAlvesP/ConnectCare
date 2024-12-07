@@ -6,22 +6,20 @@ import { Step3 } from "./Step3";
 import UndrawEnergizer from "../../assets/undraw_energizer.svg";
 import { ButtonBack, ButtonNext, ButtonsSteps, ImageContainer, MainContainer, StepBox, StepsActive } from "./style";
 
-
-const steps = ["1", "2", "3"];
+const steps = ["", "", ""];
 
 export const SignUp = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [stepStatus, setStepStatus] = useState([false, false, false]);  // Step completion status
   const navigate = useNavigate();
 
   const renderStepContent = (step) => {
     switch (step) {
       case 0:
-        return <Step1 updateStatus={(status) => updateStepStatus(0, status)} />;
+        return <Step1 />;
       case 1:
-        return <Step2 updateStatus={(status) => updateStepStatus(1, status)} />;
+        return <Step2 />;
       case 2:
-        return <Step3 updateStatus={(status) => updateStepStatus(2, status)} />;
+        return <Step3 />;
       default:
         return "Passo desconhecido";
     }
@@ -29,7 +27,7 @@ export const SignUp = () => {
 
   const handleNext = () => {
     if (activeStep === steps.length - 1) {
-      navigate("/home");
+      navigate("/");
     } else {
       setActiveStep((prev) => prev + 1);
     }
@@ -37,14 +35,6 @@ export const SignUp = () => {
 
   const handleBack = () => {
     setActiveStep((prev) => (prev > 0 ? prev - 1 : prev));
-  };
-
-  const updateStepStatus = (stepIndex, status) => {
-    setStepStatus((prevStatus) => {
-      const newStatus = [...prevStatus];
-      newStatus[stepIndex] = status;
-      return newStatus;
-    });
   };
 
   return (
@@ -55,26 +45,15 @@ export const SignUp = () => {
 
       <StepBox>
         <StepsActive>
-          {steps.map((label, index) => (
-            <div key={index}>
-              <span
-                style={{
-                  borderRadius: "50%",
-                  width: "20px",
-                  height: "20px",
-                  display: "inline-block",
-                  marginRight: "10px",
-                  backgroundColor: stepStatus[index] ? "green" : "blue",
-                }}
-              ></span>
-              {index === activeStep ? <b>{label}</b> : label}
+          {steps.map((_, index) => (
+            <div key={index} className="step-container">
+              <div className={`circle ${index === activeStep ? "active" : ""}`}></div>
+              {index < steps.length - 1 && <div className="line"></div>}
             </div>
           ))}
         </StepsActive>
 
-        <div>
-          {renderStepContent(activeStep)}
-        </div>
+        <div>{renderStepContent(activeStep)}</div>
 
         <ButtonsSteps>
           <ButtonBack onClick={handleBack} disabled={activeStep === 0}>

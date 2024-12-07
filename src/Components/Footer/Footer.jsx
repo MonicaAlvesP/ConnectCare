@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { Nav, Box } from "./StyleFooter.jsx";
+import { Nav, DireitosAutorais, Container } from "./StyleFooter.jsx";
 
 function Footer() {
   return (
-    <Box>
+    <Container>
       <Nav>
         <li>
           {" "}
@@ -35,8 +35,10 @@ function Footer() {
           </Link>{" "}
         </li>
       </Nav>
-      <p>ConnectCare © 2024 connectcare.app.br</p>
-    </Box>
+      <DireitosAutorais>
+        <p>ConnectCare © 2024 connectcare.app.br</p>
+      </DireitosAutorais>
+    </Container>
   );
 }
 

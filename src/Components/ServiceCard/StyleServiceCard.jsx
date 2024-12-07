@@ -1,16 +1,23 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-  background-color: var(--secondary);
-  display: grid;
+  background-color: var(--gray-5);
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 12rem;
+  justify-content: center;
+  width: 20vw;
+  height: 25vh;
+  border-radius: 30px;
+  gap: 1rem;
+
+  &:hover {
+    background-color: var(--secondary);
+    transition: background-color 0.3s ease;
+  }
 
   img {
-    height: 4rem;
+    height: 10vh;
   }
 
   a {
@@ -22,5 +29,6 @@ export const Box = styled.div`
   a:hover {
     cursor: pointer;
     color: var(--tertiary);
+    transition: color 0.3s ease;
   }
 `;
